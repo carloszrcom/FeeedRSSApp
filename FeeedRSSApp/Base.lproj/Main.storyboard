@@ -28,9 +28,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="KdF-V9-jU9" kind="show" identifier="viewDos" id="1kM-Db-5i6"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -54,7 +51,7 @@
         <!--Detail View Controller-->
         <scene sceneID="GAi-LU-DM1">
             <objects>
-                <viewController storyboardIdentifier="detailView" id="KdF-V9-jU9" customClass="DetailViewController" customModule="FeeedRSSApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="KdF-V9-jU9" customClass="DetailViewController" customModule="FeeedRSSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lm1-2X-hO8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

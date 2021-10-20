@@ -68,7 +68,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    // Métodos delegados de la vista de tabla.
+    // MARK: - Métodos delegados de la vista de tabla.
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
@@ -81,15 +82,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
-    
-    // Método para pasar a la vista detalle.
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "viewDos" {
-            guard let celdaSeleccionada = tableView.indexPathForSelectedRow?.row else { return }// Devuelve un entero si hay.
-            let postSeleccionado = posts[celdaSeleccionada]
-            let vistaDetalle = segue.destination as! DetailViewController
-            vistaDetalle.contenidoWeb = postSeleccionado.link
-        }
+
+    // Método delegado de la vista de tabla. Navega a la vista detalle.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator?.goDetailViewController(data: posts[indexPath.row].link)
     }
 }
 

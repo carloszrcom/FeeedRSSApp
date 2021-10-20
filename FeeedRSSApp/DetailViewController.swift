@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class DetailViewController: UIViewController, WKNavigationDelegate {
+class DetailViewController: UIViewController, WKNavigationDelegate, CoordinatorDelegate {
 
     @IBOutlet private weak var webView: WKWebView!
     @IBOutlet private weak var activity: UIActivityIndicatorView!

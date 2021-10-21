@@ -18,6 +18,8 @@
 		C998DA3A271F1CC5007B00B8 /* CoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998DA39271F1CC5007B00B8 /* CoordinatorDelegate.swift */; };
 		C998DA3C271F22F0007B00B8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998DA3B271F22F0007B00B8 /* Coordinator.swift */; };
 		C998DA3E271F242F007B00B8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C998DA3D271F242F007B00B8 /* MainCoordinator.swift */; };
+		C99BD1472721758500943B51 /* ObjectDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99BD1462721758500943B51 /* ObjectDataSource.swift */; };
+		C99BD1492721794700943B51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99BD1482721794700943B51 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		C998DA39271F1CC5007B00B8 /* CoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorDelegate.swift; sourceTree = "<group>"; };
 		C998DA3B271F22F0007B00B8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C998DA3D271F242F007B00B8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		C99BD1462721758500943B51 /* ObjectDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDataSource.swift; sourceTree = "<group>"; };
+		C99BD1482721794700943B51 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +74,11 @@
 				C9969F4626FDB8B400D81084 /* SceneDelegate.swift */,
 				C9969F4826FDB8B400D81084 /* ViewController.swift */,
 				C9969F5A26FDC75A00D81084 /* DetailViewController.swift */,
+				C99BD1482721794700943B51 /* Constants.swift */,
 				C97B4B8A270C47A000ECC1C6 /* Post.swift */,
 				C9969F4A26FDB8B400D81084 /* Main.storyboard */,
 				C9969F4D26FDB8B500D81084 /* Assets.xcassets */,
+				C99BD1462721758500943B51 /* ObjectDataSource.swift */,
 				C9969F4F26FDB8B500D81084 /* LaunchScreen.storyboard */,
 				C9969F5226FDB8B500D81084 /* Info.plist */,
 				C998DA3F271F338C007B00B8 /* Coordinator */,
@@ -165,8 +171,10 @@
 				C9969F4526FDB8B400D81084 /* AppDelegate.swift in Sources */,
 				C9969F4726FDB8B400D81084 /* SceneDelegate.swift in Sources */,
 				C9969F5B26FDC75A00D81084 /* DetailViewController.swift in Sources */,
+				C99BD1492721794700943B51 /* Constants.swift in Sources */,
 				C97B4B8B270C47A000ECC1C6 /* Post.swift in Sources */,
 				C998DA3A271F1CC5007B00B8 /* CoordinatorDelegate.swift in Sources */,
+				C99BD1472721758500943B51 /* ObjectDataSource.swift in Sources */,
 				C998DA3C271F22F0007B00B8 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,14 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate, CoordinatorDelegate {
+class ViewController: UIViewController, UITableViewDelegate, XMLParserDelegate, CoordinatorDelegate {
+    
+    // MARK: - Selectors
 
     @IBOutlet private weak var tableView: UITableView!
     
-    // Array del modelo de datos creado Post.
-    var posts = [Post]()
+    // MARK: - Properties
     
-    // Para serializar el xml.
+    var dataSource = ObjectDataSource()
     var parser: XMLParser = XMLParser()
     var titulo: String = String()
     var link: String = String()
@@ -22,19 +23,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var coordinator: MainCoordinator?
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        guard let url = URL(string: "https://carloszr.com/feed") else { return }
+        guard let url = URL(string: "\(Constants.URL.main)\(Constants.EndPoint.feed)") else { return }
         guard let parser = XMLParser(contentsOf: url) else { return }
-        // Decirle al view controller que va a ser su delegado.
         parser.delegate = self
-        // Comenzar a parsear.
         parser.parse()
         
         // Para que no haya celdas vacías.
         self.tableView.tableFooterView = UIView()
     }
+    
+    // MARK: - Helpers
     
     // Métodos delegados de la clase XML Parser.
     // Extraer ciertas claves para serializar el objeto.
@@ -42,7 +44,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         nombre = elementName
         
         if elementName == "item" {
-            // Inicializar los Strings de la clase.
             titulo = String()
             link = String()
         }
@@ -64,28 +65,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item" {
             let datosPost = Post(titulo: titulo, link: link)
-            posts.append(datosPost)
+            dataSource.posts.append(datosPost)
         }
     }
     
+
     // MARK: - Métodos delegados de la vista de tabla.
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let tituloPost = posts[indexPath.row].titulo
-        
-        cell.textLabel?.text = tituloPost
-        
-        return cell
-    }
-
     // Método delegado de la vista de tabla. Navega a la vista detalle.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.goDetailViewController(data: posts[indexPath.row].link)
+        coordinator?.goDetailViewController(data: dataSource.posts[indexPath.row].link)
     }
 }
 
